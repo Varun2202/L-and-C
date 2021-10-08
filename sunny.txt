@@ -1,0 +1,15 @@
+clc;
+clear all;
+d=input('enter diameter cm:');
+r=d/2;
+rad=r*10^(-2);
+Dab=input('enter distance between A and B phase conductor in m:');
+Dbc=input('enter distance between B and C phase conductor in m:');
+Dac=input('enter distance between A and C phase conductor in m:');
+r1=rad*0.7788;
+Deq=(Dab*Dbc*Dac)^(1/3);
+L=2*10^(-7)*log(Deq/r1);
+C=(2*pi*8.854*10^(-12))/(log(Deq/rad));
+C1=C*10^6;
+fprintf('\n Value of Inductance=%d H\n',L);
+fprintf('\n Value of capacitance=%d microF/m\n',C1);
